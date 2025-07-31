@@ -1,0 +1,16 @@
+{
+    "name": "Game.RuntimeBoosts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:55bd4ba1e4de0a54d9b1380d6cdaa18d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
