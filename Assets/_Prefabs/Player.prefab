@@ -123,6 +123,9 @@ GameObject:
   - component: {fileID: 277226008511159682}
   - component: {fileID: 1888599253694670125}
   - component: {fileID: 4220380339564623959}
+  - component: {fileID: 3289479045815373500}
+  - component: {fileID: 2196796074528083996}
+  - component: {fileID: 4309101279083438262}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2325669257
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2204704456
+  InScenePlacedSourceGlobalObjectIdHash: 2325669257
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -266,3 +269,51 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &3289479045815373500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8532929625726946135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f72eb0be52dd24dabfc63a4b404eea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2196796074528083996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8532929625726946135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0bde7cff9bbde64ab3c2320b3b4b3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPickupPrefab: {fileID: 0}
+--- !u!136 &4309101279083438262
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8532929625726946135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}

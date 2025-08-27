@@ -20,6 +20,7 @@ public class NetworkPlayer : NetworkBehaviour
     [SerializeField] private Transform groundCheckPoint;
 
     private EffectHandler effectHandler;
+    private WeaponHandler weaponHandler;
 
     private InputSystem_Actions input;
     private Rigidbody rb;
@@ -37,6 +38,7 @@ public class NetworkPlayer : NetworkBehaviour
         input = new InputSystem_Actions();
         rb = GetComponent<Rigidbody>();
         effectHandler = GetComponent<EffectHandler>();
+        weaponHandler = GetComponent<WeaponHandler>();
 
         input.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         input.Player.Move.canceled += _ => moveInput = Vector2.zero;
@@ -45,6 +47,8 @@ public class NetworkPlayer : NetworkBehaviour
         input.Player.Sprint.canceled += _ => isSprinting = false;
 
         input.Player.Jump.performed += _ => isJumping = true;
+        input.Player.Attack.performed += _ => weaponHandler?.UseWeapon();
+        input.Player.Drop.performed += _ => weaponHandler?.DropCurrentWeapon();
     }
 
     private void OnEnable() => input.Enable();
@@ -103,4 +107,21 @@ public class NetworkPlayer : NetworkBehaviour
     
     }
     */
+    /*
+        public void Died() {
+            var dropped = Instantiate(weaponPickupPrefab, transform.position, Quaternion.identity);
+            dropped.Initialize(currentWeapon.Data, currentWeapon.CurrentAmmo);
+
+        }
+    */
+
+
+    private void OnTriggerEnter(Collider other) {
+        WeaponPickup pickup = other.GetComponent<WeaponPickup>();
+        if (pickup != null) {
+            IWeapon weapon = pickup.CreateWeapon();
+            weaponHandler.EquipWeapon(weapon);
+            Destroy(pickup.gameObject);
+        }
+    }
 }

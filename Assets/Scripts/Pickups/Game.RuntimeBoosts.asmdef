@@ -2,7 +2,8 @@
     "name": "Game.RuntimeBoosts",
     "rootNamespace": "",
     "references": [
-        "GUID:55bd4ba1e4de0a54d9b1380d6cdaa18d"
+        "GUID:55bd4ba1e4de0a54d9b1380d6cdaa18d",
+        "GUID:ab01780ac2e5c5e4b8eca38093d02917"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
